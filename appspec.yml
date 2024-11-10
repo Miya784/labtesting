@@ -1,9 +1,0 @@
-version: 0.0
-os: linux
-files:
-  - source: /path/to/your/application
-    destination: /home/ec2-user/nextjs-app
-hooks:
-  AfterInstall:
-    - location: scripts/start-app.sh
-      timeout: 300
