@@ -4,18 +4,14 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com
   build:
     commands:
+      - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t web-han .
-      - docker tag web-han:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/web-han:latest
+      - docker build -t simple-docker-service-0a2a19f577a9 .
+      - docker tag simple-docker-service-0a2a19f577a9:latest 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest
   post_build:
     commands:
-      - echo Pushing the Docker image to ECR...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/web-han:latest
-      - echo Creating imagedefinitions.json...
-      - printf '[{"name":"web-han","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/web-han:latest > imagedefinitions.json
-artifacts:
-  files:
-    - imagedefinitions.json
+      - echo Pushing the Docker image...
+      - docker push 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest

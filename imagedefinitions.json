@@ -1,7 +1,7 @@
 [
     {
-      "name": "web-han",
-      "imageUri": "public.ecr.aws/b5n0b9c6/web-han:latest"
+      "name": "DeployToEcsFargateContainerName",
+      "imageUri": "619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest"
     }
   ]
   
