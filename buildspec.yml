@@ -15,3 +15,6 @@ phases:
     commands:
       - echo Pushing the Docker image...
       - docker push 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest
+artifacts:
+  files:
+    - imagedefinitions.json
