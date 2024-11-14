@@ -11,9 +11,7 @@ phases:
       - echo Building the Docker image...
       - docker build -t simple-docker-service-0a2a19f577a9 .
       - docker tag simple-docker-service-0a2a19f577a9:latest 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest
-post_build:
-  commands:
-    - echo '[{"name":"simple-docker-service","imageUri":"619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"simple-docker-service-0a2a19f577a9","imageUri":"619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
