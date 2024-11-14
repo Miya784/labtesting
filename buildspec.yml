@@ -9,13 +9,12 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t simple-docker-service-0a2a19f577a9 .
-      - docker tag simple-docker-service-0a2a19f577a9:latest 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest
+      - docker build -t han/web .
+      - docker tag han/web:latest 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/han/web:latest
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest
-      - printf '[{"name":"simple-docker-service-0a2a19f577a9","imageUri":"619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service-0a2a19f577a9:latest"}]' > imagedefinitions.json
+      - docker push 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/han/web:latest
 artifacts:
   files:
     - imagedefinitions.json
