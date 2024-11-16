@@ -1,6 +1,6 @@
 [
     {
-      "name": "simple-docker-service",
+      "name": "web-application",
       "imageUri": "619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/simple-docker-service:latest"
     }
   ]
