@@ -9,13 +9,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t inetms-gbcd/han .
-      - docker tag inetms-gbcd/han:latest 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd/han:latest
+      - docker build -t inetms-gbcd-han-rs .
+      - docker tag inetms-gbcd-han-rs:latest 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd-han-rs:latest
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd/han:latest
-      - printf '[{"name":"inetms-han","imageUri":"619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd/han"}]' > imagedefinitions.json
+      - docker push 619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd-han-rs:latest
+      - printf '[{"name":"inetms-gbcd-han-cn","imageUri":"619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd/han"}]' > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
