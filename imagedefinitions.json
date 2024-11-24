@@ -1,7 +1,7 @@
 [
     {
       "name": "inetms-gbcd-han-cn",
-      "imageUri": "619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd-han-rs"
+      "imageUri": "619071308169.dkr.ecr.ap-southeast-1.amazonaws.com/inetms-gbcd/han-rs"
     }
   ]
   
